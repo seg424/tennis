@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {ApolloClient, HttpLink, InMemoryCache, gql} from 'apollo-boost';
+import {ApolloClient, HttpLink, InMemoryCache} from 'apollo-boost';
 import App from './App';
 import './index.css';
 
