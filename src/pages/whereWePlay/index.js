@@ -8,15 +8,6 @@ const wrcMapUrl =
 const googleMapsScriptNotPresent = () =>
   !document.querySelector("[data-role='google-maps-script']");
 
-const loadScript = () => {
-  const script = document.createElement('script');
-  script.setAttribute('type', 'text/javascript');
-  script.setAttribute('data-role', 'google-maps-script');
-  initializeMap(script);
-  script.src = `${baseUrl}?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&callback=initMap`;
-  document.body.appendChild(script);
-};
-
 const initializeMap = () =>
   (window.initMap = () => {
     const map = new window.google.maps.Map(document.getElementById('map'), {
@@ -33,6 +24,15 @@ const initializeMap = () =>
       window.open(wrcMapUrl);
     });
   });
+
+const loadScript = () => {
+  const script = document.createElement('script');
+  script.setAttribute('type', 'text/javascript');
+  script.setAttribute('data-role', 'google-maps-script');
+  initializeMap(script);
+  script.src = `${baseUrl}?key=${process.env.REACT_APP_GOOGLE_MAPS_API_KEY}&callback=initMap`;
+  document.body.appendChild(script);
+};
 
 const Container = styled.div`
   height: 500px;

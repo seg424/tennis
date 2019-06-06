@@ -19,7 +19,7 @@ export default ({component: Component, ...rest}) => (
     {...rest}
     render={({match}) => (
       <React.Fragment>
-        <Navbar />
+        <Navbar match={match} />
         <Layout>
           <HeaderImage src="/adi_tennis_header.jpg" />
           <Component match={match} />

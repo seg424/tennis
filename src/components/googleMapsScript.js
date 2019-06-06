@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import {useEffect} from 'react';
 
 const baseUrl = 'https://maps.googleapis.com/maps/api/js';
 
